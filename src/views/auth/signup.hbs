@@ -1,0 +1,42 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Registrar</h3>
+                </div>
+                <img src="/images/image/logo-google.png" class="mx-auto w-25">
+                <div class="card-body">
+                    {{#if errors }}
+                    {{#each errors }}
+                    <p class="alert alert-danger">{{ this.msg }}</p>
+                    {{/each}}
+                    {{/if}}
+                    <form action="/signup" method="POST" class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <input type="type" name="first_name" value="{{data.first_name}}" placeholder="First name" class="form-control"
+                                autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <input type="type" name="last_name" value="{{data.last_name}}"  placeholder="Last name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="type" name="username" value="{{data.username}}"  placeholder="User name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" value="{{data.email}}"  placeholder="Email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" value="{{data.password}}"  placeholder="Password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                SingIn
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
